@@ -1,12 +1,12 @@
 name: Release
 on:
   schedule:
-   - cron: '0 0 * * *' # midnight UTC
-
+   - cron: '0 0 * * *'
   push:
     tags:
     - 'v[0-9]+.[0-9]+.[0-9]+'
-    ## - release
+  release:  # 新增
+    types: [published, created]  # 发布创建时触发
 
 env:
   BIN_NAME: biliup
